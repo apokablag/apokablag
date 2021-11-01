@@ -8,4 +8,14 @@
    </pets>
     <future_salary>1000</future_salary>
 </me>
+        
+<preferences>
+    <movie> "Bad Boys" </movie>
+    <series> "Friends" </series>
+    <food> "sushi" </food>
+    <time_of_year> "summer" </time_of_year>
+    <country> "Australia" </country>
+</preferences>
 </about_me>
+
+    

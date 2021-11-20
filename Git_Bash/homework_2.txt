@@ -1,0 +1,127 @@
+GIT Homework 1
+
+Для выполнения задания у вас должен быть установлен для Windows - GitBash.
+Создан аккаунт в GitHub
+Создан репозиторий в GitHub
+Созданный репозиторий склонирован на локальный компьютер в отдельную папку.
+
+Все шаги сценария выполняйте в терминале GitBush, Terminal, в папке под гитом.
+
+
+Как отправить ДЗ на проверку.
+ 1. Создайте текстоовый файл как в первом ДЗ по Terminal.					
+ 2. Сценарий перенесите в этот файл.
+ 3. На против каждого действия - напишите команду в GitBash
+
+Файл со сценарием и ссылку на свой гит хаб отправляйте менторам на проверку.
+												/d/testing/git_repo/apokablag (main)
+	
+ 4. Создать файл “new.json”									touch new.json
+ 5. Добавить файл под гит.									git add .
+ 6. Закоммитить файл.										git commit -m "add new.json file"
+ 7. Отправить файл на внешний GitHub репозиторий.						git push
+ 8. Создать файлы new2.json, new2.xml, new2.txt							touch new2.json new2.xml new2.txt
+ 9. Добавить файлы под гит.									git add .
+ 10. Закоммитить файлы.										git commit -m "add new2.json new2.xml new2.txt files"
+ 11. Отправить файлы на внешний GitHub репозиторий.						git push	
+
+ 12. Отредактировать содержание файла “new2.txt” - написать информацию о себе			vim new2.txt -> Name: Blagirev Aliaksandr, Age: 26, Pets: 0, future salary: 1000$
+(ФИО, возраст, количество домашних животных, будущая желаемая зарплата).			-> ESC -> :wq
+
+
+
+
+ 13. Отредактировать содержание файла “new2.json” - написать информацию о себе 			vim new2.txt ->   {"name": "Aliaksandr",
+(ФИО, возраст, количество домашних животных, будущая желаемая зарплата).				           "surname": "Blagirev",
+Всё написать в формате JSON.											   "age": 26,
+  														   "pets": 0,
+  														   "future_salary_dollars": 1000,
+  														  }
+ 												-> ESC -> :wq
+
+
+
+ 14. Добавить и закоммитить “new2.txt” одной строчкой. 						14 и 15 пункты вместе: git commit -am "add new2.txt and new2.json"
+ 15. Добавить и закоммитить “new2.json” одной строчкой. 
+
+ 16. Отправить изменения на внешний репозиторий.						git push
+
+ 17. Отредактировать содержание файла “new2.xml” - написать информацию о себе 			<?xml version="1.0" encoding="UTF-8"?>
+(ФИО, возраст, количество домашних животных, будущая желаемая зарплата). 			<about_me>
+Всё написать в формате XML.										<me>
+    													<name>Blagirev Aliaksandr</name>
+    													<age>26<age>
+  													<pets>
+    												My result is 0. I never had pets because I am not very keen on playing with them.
+   													</pets>
+    													<future_salary>1000</future_salary>
+													</me>
+												</about_me>
+
+ 
+18. Добавить и закоммитить “new2.xml” одной строчкой. 						git commit -am "add new2.xml"
+
+
+ 19. Отправить изменения на внешний репозиторий.						git push
+
+ 20. Отправить предыдущее домашнее задание по GitBush Terminal на внешний репозиторий.		copy to /d/testing/git_repo/apokablag
+ 21. В веб интерфейсе GitHub создать файл new3.txt.						Add file -> Create new file -> new3.txt
+ 22. Отредактировать в веб интерфейсе содержание файла “new3.txt” - написать информацию о своих предпочтениях    My favorite movie is "Bad Boysr".
+(Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить).		 My favorite series is "Friends".
+														 My favorite food is sushi.
+												 		 My favorite time of the year is 'summer'.
+														 I'd like to visit Australia. 
+			
+ 23. Сделать Commit changes (сохранить) изменения на веб интерфейсе.						Commit changes (нажимаем)
+
+ 24. Синхронизировать внешний и локальный репозитории (слить изменения с внешнего репозитория) 			git pull
+ 25. Отредактировать в веб интерфейсе содержание файла “new2.json” - добавить информацию о своих предпочтениях 
+(Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить). 		{
+ Всё в формате JSON. 												 {"name": "Aliaksandr",
+  														  "surname": "Blagirev",
+  														  "age": 26,
+  														  "pets": 0,
+  														  "future_salary_dollars": 1000,
+  														 }
+  
+ 														 {"favorite_movie": "Bad Boys",
+														  "favoriet_series": "Friends",
+														  "favorite_food": "sushi",
+														  "favorite_time_of_year": "summer",
+ 														  "favorite_country": "Australia"
+														 }
+
+														}
+
+
+ 26. Сделать Commit changes (сохранить) изменения на веб интерфейсе.						Commit chages (нажимаем)
+ 27. Синхронизировать внешний и локальный репозитории 								git pull
+
+ 28. Отредактировать в веб интерфейсе содержание файла “new2.xml” - добавить информацию о своих предпочтениях 
+(Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить). 
+Всё в формате XML.
+														<?xml version="1.0" encoding="UTF-8"?>
+														<about_me>
+														<me>
+														    <name>Blagirev Aliaksandr</name>
+														    <age>26<age>
+														    <pets>
+														    My result is 0. I never had pets because I am not very keen on playing with them.
+														    </pets>
+														    <future_salary>1000</future_salary>
+														</me>
+        
+														<preferences>
+														    <movie> "Bad Boys" </movie>
+														    <series> "Friends" </series>
+														    <food> "sushi" </food>
+														    <time_of_year> "summer" </time_of_year>
+														    <country> "Australia" </country>
+														</preferences>
+														</about_me>
+
+
+ 29. Сделать Commit changes (сохранить) изменения на веб интерфейсе.						Commit changes (нажать)
+ 30. Синхронизировать внешний и локальный репозитории 								get pull
+
+Данные для заполнения и редактирования файлов можете использовать любые, не обязательно свои.

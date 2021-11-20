@@ -1,0 +1,476 @@
+{
+	"info": {
+		"_postman_id": "e90b8614-ca4a-4155-b080-a7d99fd4cedf",
+		"name": "HW_2 group_23",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login_set_token 01",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp_JSON = pm.response.json();\r",
+							"pm.environment.set(\"token\", resp_JSON.token);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "apokablag",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwerty",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}login",
+					"host": [
+						"{{url}}login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//1) проверка на статус 200\r",
+							"pm.test(\"Status code is 200\", function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"//2) проверка структуры json\r",
+							"pm.test(\"Struktura\", function(){\r",
+							"    pm.response.to.be.json\r",
+							"})\r",
+							"\r",
+							"//3) проверка на умножение коэфициентов равенство\r",
+							"let resp = pm.response.json();\r",
+							"let salary = resp.person.u_name[1];\r",
+							"\r",
+							"let u_salary_1_5_year = resp.person.u_salary_1_5_year\r",
+							"console.log(u_salary_1_5_year)\r",
+							"\r",
+							"pm.test(\"All parameters exist\", function() {\r",
+							"    pm.expect(resp).to.have.all.keys(\"person\", \"start_qa_salary\", \"qa_salary_after_6_months\", \"qa_salary_after_12_months\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Salary 6 month = Salary * 2\", function() {\r",
+							"    pm.expect(resp.qa_salary_after_6_months).to.eql(salary * 2)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Salar after 12 months is salary * 2.9\", function () {\r",
+							"    pm.expect(resp.qa_salary_after_12_months).to.eql(salary * 2.9)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Start salary = salary\", function(){\r",
+							"    pm.expect(resp.start_qa_salary).to.eql(salary);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Salary after 1.5 year is salary * 4\", function() {\r",
+							"    pm.expect(resp.person.u_salary_1_5_year).to.eql(salary * 4)\r",
+							"})\r",
+							"\r",
+							"// 4)Достать значение из поля 'u_salary_1.5_year' и передать в поле salary запроса http://162.55.220.72:5005/get_test_user\r",
+							"\r",
+							"// достать значение и вставить в окружение\r",
+							"pm.environment.set(\"u_salary_1.5_year\", resp.person.u_salary_1_5_year)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"age\": 26,\r\n\"salary\": 1000,\r\n\"name\" : \"Alex\",\r\n\"auth_token\": \"{{token}}\" \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}user_info",
+					"host": [
+						"{{url}}user_info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// проверка статуса 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200)\r",
+							"})\r",
+							"\r",
+							"// проверка структуры json\r",
+							"pm.test(\"Struktura\", function(){\r",
+							"    pm.response.to.be.json\r",
+							"})\r",
+							"\r",
+							"// проверка результатов умножения на коэффициенты\r",
+							"let resp = pm.response.json()\r",
+							"let real_salary = resp.salary[0]\r",
+							"\r",
+							"//salary \r",
+							"pm.test(\"Salary is int and = salary\", function(){\r",
+							"    pm.expect(resp.salary[0]).to.eql(real_salary)\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Salary is not int and = salary * 2\", function() {\r",
+							"    pm.expect(resp.salary[1]).to.eql(String(real_salary*2))\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Salary is STRING and = salary*3\", function(){\r",
+							"    pm.expect(resp.salary[2]).to.eql(String(real_salary*3))\r",
+							"})\r",
+							"\r",
+							"// проверка что вторая зарплата больше первой и нулевой (индексы)\r",
+							"let salary_2 = Number(resp.salary[2])\r",
+							"let salary_1 = Number(resp.salary[1])\r",
+							"let salary_0 = Number(resp.salary[0])\r",
+							"console.log(salary_2, salary_1, salary_0)\r",
+							"\r",
+							"pm.test(\"Salary_2 > Salary_1 and Salary_2 > Salary_0\", function(){\r",
+							"    pm.expect(salary_2 > salary_1 & salary_2 > salary_0).to.eql(salary_2 > salary_1 & salary_2 > salary_0)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "26",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "1000",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Alex",
+							"type": "text"
+						},
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}new_data",
+					"host": [
+						"{{url}}new_data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1) проверка статуса 200ы\r",
+							"pm.test(\"Status code is 200\", function() {\r",
+							"    pm.response.to.have.status(200)\r",
+							"})\r",
+							"\r",
+							"// 2) проверка структуры json\r",
+							"pm.test(\"Struktura is ok\", function() {\r",
+							"    pm.response.to.be.ok      // так\r",
+							"    pm.response.to.be.json    // или так , два метода\r",
+							"})\r",
+							"\r",
+							"// 3) проверка результата умножения weight \r",
+							"// let resp = pm.response.json();\r",
+							"let weight = Number(request.data.weight);\r",
+							"console.log(weight)\r",
+							"\r",
+							"pm.test(\"Result daily_food is good\", function() {\r",
+							"    pm.expect(resp.daily_food).to.eql(weight * 0.012)\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Results daily_sleep is ok\", function() {\r",
+							"    pm.expect(resp.daily_sleep).to.eql(weight * 2.5)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "26"
+						},
+						{
+							"key": "weight",
+							"value": "80"
+						},
+						{
+							"key": "name",
+							"value": "Alex"
+						},
+						{
+							"key": "auth_token",
+							"value": "{{token}}"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}test_pet_info",
+					"host": [
+						"{{url}}test_pet_info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1)провека статуса 200\r",
+							"pm.test(\"Status code is 200\", function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"});\r",
+							"\r",
+							"// 2) проверка структуры json \r",
+							"pm.test(\"Struktura is good\", function() {\r",
+							"    pm.response.to.be.ok\r",
+							"})\r",
+							"\r",
+							"// 3) проверка что значение поля name = name из окружения\r",
+							"\r",
+							"let name_data = request.data.name           //взяли имя из формы\r",
+							"console.log(name_data)                      // вывели в консоль\r",
+							"\r",
+							"let resp_JSON = pm.response.json()                      // сделали response JSON \r",
+							"pm.environment.set(\"name_environment\",resp_JSON.name)   // загрузили в окружение еременную name из JSON \r",
+							"\r",
+							"// тестируем равенство name из окружения и формы (name_environment and name_data)\r",
+							"pm.test(\"Check name_data = name_environment\", function() {\r",
+							"    pm.expect(name_data).to.eql(resp_JSON.name)\r",
+							"})\r",
+							"\r",
+							"// 4) значение поля age = response (отправленному) значению age \r",
+							"let age_form = request.data.age\r",
+							"console.log(age_form)\r",
+							"let age_resp = resp_JSON.age\r",
+							"console.log(age_resp)\r",
+							"\r",
+							"pm.test(\"age_form = age_resp\", function(){\r",
+							"    pm.expect(age_form).to.eql(age_resp)\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "26",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "1000",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Oleg",
+							"type": "text"
+						},
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}get_test_user?",
+					"host": [
+						"{{url}}get_test_user"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"resp_JSON = pm.response.json()\r",
+							"num = Math.floor(Math.random() * 371)\r",
+							"// console.log(num)\r",
+							"\r",
+							"// массив всех Cur_ID\r",
+							"let arr_ID = [];\r",
+							"for (let i = 0; i < resp_JSON.length; i++) { // цикл перебора от нуля до длины массива json\r",
+							"    arr_ID.push(resp_JSON[i].Cur_ID)            // добавление \r",
+							"}\r",
+							"console.log(arr_ID)\r",
+							"\r",
+							"let cur_id = arr_ID[num]\r",
+							"console.log(cur_id)\r",
+							"pm.environment.set(\"Cur_ID\", cur_id)\r",
+							"\r",
+							"//массив всех Cur_Name (все валюты)\r",
+							"let arr_Name = []\r",
+							"for (let p = 0; p < resp_JSON.length; p++) {\r",
+							"    arr_Name.push(resp_JSON[p].Cur_Name)\r",
+							"}\r",
+							"console.log(arr_Name)\r",
+							"\r",
+							"// итерация всех валют\r",
+							"for (let k = 0; k < arr_Name.length; k++) {\r",
+							"    console.log(arr_Name[k])\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}currency",
+					"host": [
+						"{{url}}currency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200)\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Struktura is ok\", function() {\r",
+							"    pm.response.to.be.ok\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "curr_code",
+							"value": "486",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}curr_byn",
+					"host": [
+						"{{url}}curr_byn"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

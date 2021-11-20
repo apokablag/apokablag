@@ -1,4 +1,0 @@
-Name: Blagirev Aliaksandr
-Age: 26
-Pets: 0
-future salary: 1000$

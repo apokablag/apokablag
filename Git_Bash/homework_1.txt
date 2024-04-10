@@ -1,29 +1,29 @@
-1) Посмотреть где я										pwd 
-2) Создать папку										mkdir new_folder
-3) Зайти в папку										cd new_folder
-4) Создать 3 папки										mkdir one two three
-5) Зайти в любоую папку										cd one
-6) Создать 5 файлов (3 txt, 2 json)								touch 1.txt 2.txt 3.txt 4.json 5.json
-7) Создать 3 папки										mkdir 1 2 3
-8. Вывести список содержимого папки								ls -la
-9) + Открыть любой txt файл									vim 1.txt
-10) + написать туда что-нибудь, любой текст.							INSERT -> 	Marry: class1
+1) Where am I?											pwd 
+2) Create a folder										mkdir new_folder
+3) Get in the folder										cd new_folder
+4) Create 3 folders										mkdir one two three
+5) Get in any folders									        cd one
+6) Create 5 files    (3 txt, 2 json)								touch 1.txt 2.txt 3.txt 4.json 5.json
+7) Create 3 folders										mkdir 1 2 3
+8. Display list of value current folder								ls -la
+9) + Open any ".txt" file									vim 1.txt
+10) + write down something, text.								INSERT -> 	Marry: class1
 														Lola:   class2
 														Bob: class1
 														Sasha: class2
  
-11) + сохранить и выйти.									-> ESC -> :wq
-12) Выйти из папки на уровень выше								cd ..
+11) + save and exit.										-> ESC -> :wq
+12) get out the folder										cd ..
 —
-13) переместить любые 2 файла, которые вы создали, в любую другую папку.			mv ./one/{1.txt,4.json} ./one/1/
-14) скопировать любые 2 файла, которые вы создали, в любую другую папку.			cp ./one/{2.txt,5.json} ./one/2/
-15) Найти файл по имени										find 2.txt
-16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.		$ tail -f ./2.txt
+13) move 2 files, which you designed, in any folder.						mv ./one/{1.txt,4.json} ./one/1/
+14) copy 2 files, which you designed, in any folder.						cp ./one/{2.txt,5.json} ./one/2/
+15) Find file by name										find 2.txt
+16) show content in the folder (command grep).							$ tail -f ./2.txt
 
-17) вывести несколько первых строк из текстового файла						head -3 2.txt
-18) вывести несколько последних строк из текстового файла					tail -3 2.txt
-19) просмотреть содержимое длинного файла (команда less) изучите как она работает.		less new.txt (less --help)
-20) вывести дату и время									date -> Enter
+17) display several first lines from file .txt							head -3 2.txt
+18) display several last lines from file .txt							tail -3 2.txt
+19) show content in the file (command less).							less new.txt (less --help)
+20) displate date and time									date -> Enter
 =========
 
 Задание *

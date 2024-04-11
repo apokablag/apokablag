@@ -1,26 +1,25 @@
 GIT Homework 1
 
-Для выполнения задания у вас должен быть установлен для Windows - GitBash.
-Создан аккаунт в GitHub
-Создан репозиторий в GitHub
-Созданный репозиторий склонирован на локальный компьютер в отдельную папку.
+Instal Gitbash to Windows - GitBash.
+Create account GitHub
+Create repository GitHub
+Create copy of repository to local computer
 
-Все шаги сценария выполняйте в терминале GitBush, Terminal, в папке под гитом.
+All steps have to be performed in terminal GitBash
 
+How to send homework for checking.
+ 1. Create text file like in homework #1 Terminal.					
+ 2. Add scenario to this file.
+ 3. Write down a command across every pharagraph
 
-Как отправить ДЗ на проверку.
- 1. Создайте текстоовый файл как в первом ДЗ по Terminal.					
- 2. Сценарий перенесите в этот файл.
- 3. На против каждого действия - напишите команду в GitBash
-
-Файл со сценарием и ссылку на свой гит хаб отправляйте менторам на проверку.
+Send the file with scenario and url your github to mentors for checking.
 												/d/testing/git_repo/apokablag (main)
 	
- 4. Создать файл “new.json”									touch new.json
- 5. Добавить файл под гит.									git add .
- 6. Закоммитить файл.										git commit -m "add new.json file"
- 7. Отправить файл на внешний GitHub репозиторий.						git push
- 8. Создать файлы new2.json, new2.xml, new2.txt							touch new2.json new2.xml new2.txt
+ 4. Create file “new.json”									touch new.json
+ 5. Add file											git add .
+ 6. Commit file.										git commit -m "add new.json file"
+ 7. Send the file to external GitHub repository.						git push
+ 8. Create files new2.json, new2.xml, new2.txt							touch new2.json new2.xml new2.txt
  9. Добавить файлы под гит.									git add .
  10. Закоммитить файлы.										git commit -m "add new2.json new2.xml new2.txt files"
  11. Отправить файлы на внешний GitHub репозиторий.						git push	

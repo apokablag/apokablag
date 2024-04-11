@@ -27,27 +27,27 @@
 =========
 
 Задание *
-1) Отправить http запрос на сервер.
+1) Send http request to the server.
 http://162.55.220.72:5005/terminal-hw-request							curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
 
 												или 
 												Первое, вводим:
-												$ curl "http://162.55.220.72:5005/terminal-hw-request" -> выдает =
+												$ curl "http://162.55.220.72:5005/terminal-hw-request" -> equal =
 												{"Intro":"Hello!! This is your the first response from server","Tasks":
 												{"Task_1":"Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=
 												(set_your_String)&age=(set_your_number)","result":["Your_String","Your_number"]}}
 
 
-												Вводим:
+												Input:
 												$ curl "http://162.55.220.72:5005/get_method?name=Alexander&age=26" 
-												Результат:
+												Result:
 												["Alexander","26"]
 
 
 
 
 
-2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13			mkdir new
+2) Create script which perform all 3, 4, 5, 6, 7, 8, 13						mkdir new
 												touch script.sh
 												nano script.sh
 												

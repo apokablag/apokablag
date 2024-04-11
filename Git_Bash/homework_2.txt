@@ -30,9 +30,9 @@ Send the file with scenario and url your github to mentors for checking.
 
 
 
- 13. Отредактировать содержание файла “new2.json” - написать информацию о себе 			vim new2.txt ->   {"name": "Aliaksandr",
-(ФИО, возраст, количество домашних животных, будущая желаемая зарплата).				           "surname": "Blagirev",
-Всё написать в формате JSON.											   "age": 26,
+ 13. Change content of the file “new2.json” - information about yourself 			vim new2.txt ->   {"name": "Aliaksandr",
+(Full name, Age, Amount of pets, Expected Salary).							           "surname": "Blagirev",
+Write down in format JSON.											   "age": 26,
   														   "pets": 0,
   														   "future_salary_dollars": 1000,
   														  }
@@ -40,43 +40,45 @@ Send the file with scenario and url your github to mentors for checking.
 
 
 
- 14. Добавить и закоммитить “new2.txt” одной строчкой. 						14 и 15 пункты вместе: git commit -am "add new2.txt and new2.json"
- 15. Добавить и закоммитить “new2.json” одной строчкой. 
+ 14. Add and Commit “new2.txt” one line. 						14 и 15 пункты вместе: git commit -am "add new2.txt and new2.json"
+ 15. Add and Commit “new2.json” one line. 
 
- 16. Отправить изменения на внешний репозиторий.						git push
+ 16. Send all changes to external repository.						git push
 
- 17. Отредактировать содержание файла “new2.xml” - написать информацию о себе 			<?xml version="1.0" encoding="UTF-8"?>
-(ФИО, возраст, количество домашних животных, будущая желаемая зарплата). 			<about_me>
-Всё написать в формате XML.										<me>
+ 17.Change content of the file “new2.xml” - write down info about yourself 			<?xml version="1.0" encoding="UTF-8"?>
+(Full name, Age, Amount of pets, Expected Salary). 							<about_me>
+Format XML.												<me>
     													<name>Blagirev Aliaksandr</name>
     													<age>26<age>
   													<pets>
-    												My result is 0. I never had pets because I am not very keen on playing with them.
+    												My result is 0. I never had pets because I am not very keen on playing with them. But I would purchase one someday.
    													</pets>
     													<future_salary>1000</future_salary>
 													</me>
 												</about_me>
 
  
-18. Добавить и закоммитить “new2.xml” одной строчкой. 						git commit -am "add new2.xml"
+18. Add and commit “new2.xml” one line. 								git commit -am "add new2.xml"
 
 
- 19. Отправить изменения на внешний репозиторий.						git push
+ 19. Send all changes to external repository.								git push
 
- 20. Отправить предыдущее домашнее задание по GitBush Terminal на внешний репозиторий.		copy to /d/testing/git_repo/apokablag
- 21. В веб интерфейсе GitHub создать файл new3.txt.						Add file -> Create new file -> new3.txt
- 22. Отредактировать в веб интерфейсе содержание файла “new3.txt” - написать информацию о своих предпочтениях    My favorite movie is "Bad Boysr".
-(Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить).		 My favorite series is "Friends".
+ 20. Send previous homework to GitBush Terminal external repository.				copy to /d/testing/git_repo/apokablag
+ 21. Create file new3.txt in Web interface GitHub new3.txt.						Add file -> Create new file -> new3.txt
+ 
+22. Change “new3.txt” - add information about preferences						         My favorite movie is "Bad Boysr".
+(Favorite movie, favorite serial, favorite food, favorite season, country for visiting).			 My favorite series is "Friends".
 														 My favorite food is sushi.
 												 		 My favorite time of the year is 'summer'.
 														 I'd like to visit Australia. 
 			
- 23. Сделать Commit changes (сохранить) изменения на веб интерфейсе.						Commit changes (нажимаем)
+ 23. Commit changes (save) in Web.										Commit changes (click)
 
- 24. Синхронизировать внешний и локальный репозитории (слить изменения с внешнего репозитория) 			git pull
- 25. Отредактировать в веб интерфейсе содержание файла “new2.json” - добавить информацию о своих предпочтениях 
-(Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить). 		{
- Всё в формате JSON. 												 {"name": "Aliaksandr",
+ 24. Synchronize local and external repositories (get information from external repository) 			git pull
+
+25. Change “new2.json” - add information about preferences
+(Favorite movie, favorite serial, favorite food, favorite season, country for visiting). 			{
+ Format JSON. 												 {"name": "Aliaksandr",
   														  "surname": "Blagirev",
   														  "age": 26,
   														  "pets": 0,
@@ -93,12 +95,12 @@ Send the file with scenario and url your github to mentors for checking.
 														}
 
 
- 26. Сделать Commit changes (сохранить) изменения на веб интерфейсе.						Commit chages (нажимаем)
- 27. Синхронизировать внешний и локальный репозитории 								git pull
+ 26. Commit changes (save)  in Web.										Commit chages (click)
+ 27. Synchronize local and external repositories (get information from external repository)			git pull
 
- 28. Отредактировать в веб интерфейсе содержание файла “new2.xml” - добавить информацию о своих предпочтениях 
-(Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить). 
-Всё в формате XML.
+ 28. Edit “new2.xml” - add your preferences 
+(Favorite movie, favorite serial, favorite food, favorite season, country for visiting). 
+Format  XML.
 														<?xml version="1.0" encoding="UTF-8"?>
 														<about_me>
 														<me>

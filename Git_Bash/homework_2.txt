@@ -17,15 +17,15 @@ Send the file with scenario and url your github to mentors for checking.
 	
  4. Create file “new.json”									touch new.json
  5. Add file											git add .
- 6. Commit file.										git commit -m "add new.json file"
+ 6. Commit file in Git.										git commit -m "add new.json file"
  7. Send the file to external GitHub repository.						git push
  8. Create files new2.json, new2.xml, new2.txt							touch new2.json new2.xml new2.txt
- 9. Добавить файлы под гит.									git add .
- 10. Закоммитить файлы.										git commit -m "add new2.json new2.xml new2.txt files"
- 11. Отправить файлы на внешний GitHub репозиторий.						git push	
+ 9. Add files in Git										git add .
+ 10. Commit these files										git commit -m "add new2.json new2.xml new2.txt files"
+ 11. Send the files to external GitHub repository.						git push	
 
- 12. Отредактировать содержание файла “new2.txt” - написать информацию о себе			vim new2.txt -> Name: Blagirev Aliaksandr, Age: 26, Pets: 0, future salary: 1000$
-(ФИО, возраст, количество домашних животных, будущая желаемая зарплата).			-> ESC -> :wq
+ 12. Change content of the file “new2.txt” - fill out the file about yourself			vim new2.txt -> Name: Blagirev Aliaksandr, Age: 26, Pets: 0, expected salary: 100.000$
+(Full name, Age, Amount of pets, Expected Salary).						-> ESC -> :wq
 
 
 
